@@ -1,42 +1,58 @@
 UpyunFile
 =========
 
-又拍云文件管理插件Typecho版
+ 又拍云文件管理插件Typecho版
 
-####插件简介：
+#### 插件简介：
 
-  基于Typecho 0.9（目前已支持Typecho1.0）原上传接口开发，继承原上传所有（上传、修改和删除）功能，有效分流网站流量，减轻系统负载。([更多...](http://pengzhiyong.com/archives/typecho-upyunfile-upgrade.html "UpyunFile详情介绍"))
+ 本插件基于 [codesee/UpyunFile](https://github.com/codesee/UpyunFile) 二次开发，解决了原作的一些 bug，并加入了新功能。
+   
+#### 插件功能：
+
+  1. 上传、修改和删除功能
+  2. 静态资源接入又拍云 CDN
+  3. 一键替换当前博客中所有图片的 URL 为 CDN 加速链接
+  4. 接入又拍云图片处理
+  5. 为博客静态资源加入 Token 防盗链
   
-####插件功能：
+  ![截图](./screenshot.jpg)
 
-  1. 上传、修改和删除功能（基于原上传功能）；
-  2. CDN内容分发功能，承接又拍云强大的CDN内容分发；
-  3. 绑定域名后，享受特有的文件URL路径，加快静态文件加载速度。
+#### 使用方法：
 
-####使用方法：
+  1. 在 [Release](https://github.com/ShadowySpirits/UpyunFile/releases) 中下载此插件的最新版，上传至网站的/usr/plugins/目录下；
+  2. 启用该插件，正确填写相关信息，保存即可。
+  3. 详细使用以及其他技巧见此文：https://blog.sspirits.top/archives/new-version-of-UpyunFile-plugin-use-tutorial
 
-  1. 下载此插件，上传至网站的/usr/plugins/目录下；
-  2. 启用该插件，填写好Upyun空间信息，保存即可。
 
-####注意事项：
+#### 更新记录：
 
-  1. 本插件功能仅在启用并正确设置插件后才有效，在Typecho 0.9下测试完全正常，其它Typecho版本暂未测试；
-  2. 未使用本插件之前所上传之文件，启用本插件后仍按照原URL路径
-  3. 本插件文件在Upyun空间生成目录结构有两种模式：Typecho原生态目录结构(形如/usr/uploads/年/月/文件名)和精简模式(/年/月/文件名)，使用者可根据需要选择其中一种模式，文件URL路径为：绑定域名+目录结构。
-  4. 禁用该插件后，因Typecho仍然保存Upyun文件路径，为保证您的网站正常浏览，请不要变更Upyun空间名及绑定域名，或者搬移至其它空间，但仍然使用当前的文件目录结构。
-  5. 本插件为用户免费自由使用，作者力求插件功能完善，但对使用者涉及的文件内容不承担任何责任。
+**2019-1-20：** 
 
-####更新记录：
+- 升级 SDK，修复 Bug，加入新功能
 
-**2014-01-19：** 添加目录结构模式，使用者可根据需要选择喜好的模式;
+**2019-2-19：** 
 
-**2015-12-24：** 升级插件，以支持Typecho 1.0;
+- 控制台的文件管理中现在可以正常查看有 Token 防盗链保护的图片
+- 又拍云图片处理会忽略带有后缀 `_nothumb` 的图片（比如：example_nothumb.png）
+- 优化代码
 
-**2016-12-12：** 升级Upyun SDK,以更好支持Upyun云存储。
-  
-####联系作者：
+**2019-2-23：** 
 
-1. 作者：codesee (大道至简)
-2. 网址：<http://pengzhiyong.com>;
-3. 邮箱：zhiyongpeng(###)outlook.com;
-4. QQ：1437 5907（添加好友请注明"UpyunFile"）.
+- 修复某些情况下重复添加 Token 的 bug
+
+**2019-4-13：** 
+
+- 优化代码
+- 增强兼容性
+
+**2019-4-13：** 
+
+- 解决兼容性问题
+  
+#### 鸣谢：
+ 原作者：[codesee](https://github.com/codesee)
+ 
+ 图片链接替换：[benzBrake](https://github.com/benzBrake)
+ 
+ 本插件为用户免费自由使用，作者力求插件功能完善，但对使用者涉及的文件内容不承担任何责任。
+
